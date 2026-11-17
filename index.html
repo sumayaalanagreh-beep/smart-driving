@@ -720,5 +720,25 @@ function update(){
 }
 setInterval(()=>{try{update()}catch(e){console.warn('V13 closing',e)}},500);
 })();
-</script></body></html>
+</script><style id="lesson-objectives-heading-style">
+.lesson-objectives-name{direction:rtl;text-align:center;font-family:Tahoma,Arial,sans-serif;font-size:clamp(23px,3vw,38px);font-weight:900;color:#870e37;background:linear-gradient(110deg,#fff6e5,#fff);border:2px solid #d9a33b;border-radius:17px;padding:16px 22px;margin:12px auto 22px;max-width:850px;box-shadow:0 6px 18px #870e3712;line-height:1.6}
+.lesson-objectives-name strong{color:#870e37}
+</style>
+<script id="lesson-objectives-heading-script">
+(function(){
+  function insertLessonTitle(){
+    document.querySelectorAll('h1,h2,h3,h4').forEach(function(h){
+      if(h.textContent.trim()!=='ماذا سأحقق اليوم؟')return;
+      if(h.previousElementSibling && h.previousElementSibling.classList.contains('lesson-objectives-name'))return;
+      var block=document.createElement('div');block.className='lesson-objectives-name';
+      block.textContent='عنوان الدرس: الأحداث والدوال';
+      h.parentNode.insertBefore(block,h);
+    });
+  }
+  var scheduled=false;
+  new MutationObserver(function(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){scheduled=false;insertLessonTitle()})}).observe(document.documentElement,{childList:true,subtree:true});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',insertLessonTitle);else insertLessonTitle();
+})();
+</script>
+</body></html>
 <style id="alice-final-clock-style">#alice-independent-clock{display:inline-flex!important;position:fixed!important;top:66px!important;left:16px!important;z-index:2147483646!important;visibility:visible!important;opacity:1!important;font-size:17px!important;box-shadow:0 5px 20px #0003!important}body:has(#alice-role-gate) #alice-independent-clock{display:none!important}@media(max-width:600px){#alice-independent-clock{top:64px!important;left:6px!important;font-size:14px!important}}</style>
